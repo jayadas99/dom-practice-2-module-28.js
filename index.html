@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make Double and Tripple</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-5xl text-center mt-4">Make <span class="text-red-500 font-medium">Double and Tripple</span>!!!
+        </h1>
+    </header>
+    <main>
+        <section>
+            <div class="bg-violet-400 p-8 rounded-lg mt-8 w-3/4 mx-auto">
+                <h3 class="text-4xl text-white mb-4">Write a number</h3>
+                <input id="input-field" class="w-3/4 px-4 py-3 rounded block" type="text" placeholder=" write a number">
+                <button id="btn-double"
+                    class="bg-blue-800 px-6 py-2 text-white rounded-lg mt-4 font-medium hover:bg-blue-600">double</button>
+                <button id="btn-tripple"
+                    class="bg-amber-800 px-6 py-2 text-white rounded-lg mt-4 font-medium hover:bg-blue-600">tripple</button>
+            </div>
+        </section>
+        <section>
+            <div class="bg-violet-400 p-8 rounded-lg mt-8 w-3/4 mx-auto">
+                <p id="result" class="text-4xl text-white mb-4 w-1/2 mx-auto bg-amber-800 text-center"></p>
+            </div>
+        </section>
+        <script src="js/double-tripple.js"></script>
+        <script>
+            // if (typeof text !== 'number') {
+            //     alert('please enter a valid number')
+            // }
+            // else {
+            //     alert('Tui password vul e gesos!!!Tok e ami tejjo ghosona korlam.')
+            // }
+
+            
+            // show double
+            document.getElementById('btn-double').addEventListener('click', function () {
+                
+                const inputField = document.getElementById('input-field');
+                const newInputFieldString = inputField.value;
+                const newInputValue = parseFloat(newInputFieldString);
+
+                inputField.value = '';
+
+                if (isNaN(newInputValue)) {
+                alert('Please provide a valid number');
+                return;
+                 }
+                const getNumber = document.getElementById('result');
+                const newValue = newInputValue * 2;
+                getNumber.innerText = newValue;
+                getNumber.value = '';
+
+            })
+
+            // show tripple
+
+            
+
+            document.getElementById('btn-tripple').addEventListener('click', function () {
+                
+                const inputField = document.getElementById('input-field');
+                const newInputFieldString = inputField.value;
+                const newInputValue = parseFloat(newInputFieldString);
+
+                inputField.value = '';
+
+                if (isNaN(newInputValue)) {
+                alert('Please provide a valid number');
+                return;
+                 }
+                 
+                const getNumber = document.getElementById('result');
+                const newValue = newInputValue * 3;
+                getNumber.innerText = newValue;
+                getNumber.value = '';
+
+            })
+
+
+
+        </script>
+    </main>
+</body>
+
+</html>
